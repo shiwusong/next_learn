@@ -1,16 +1,19 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "next",
+    "dev": "supervisor -w server,index.js index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "npm run build;NODE_ENV=production node index.js"
   },
   "dependencies": {
     "@zeit/next-stylus": "^1.0.1",
     "antd": "^3.11.2",
+    "fastify": "^1.13.2",
     "next": "^7.0.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "stylus": "^0.54.5"
+    "serve-static": "^1.13.2",
+    "stylus": "^0.54.5",
+    "supervisor": "^0.12.0"
   }
 }
