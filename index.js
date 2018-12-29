@@ -1,9 +1,24 @@
-module.exports = async (app, options) => {
-	app.register(require('./server/index'), {
-		prefix: '/api',
-	}).after(err => {
-		console.error('[modules] ./server/index register failed!')
+const mysqlConfig = require('./config/mysql')
+
+module.exports = async (fastify, options) => {
+	// mysql - knex
+	fastify.register(require('./plugin/sw-mysql'), { mysql: mysqlConfig }).after(err => {
+		if (err) {
+			console.error('[plugin] sw-mysql register failed!')
+			throw err
+		}
 	})
+
+	fastify
+		.register(require('./server/index'), {
+			prefix: '/api',
+		})
+		.after(err => {
+			if (err) {
+				console.error('[modules] ./server/index register failed!')
+				throw err
+			}
+		})
 }
 
 // const fastify = require('fastify')({ logger: { level: 'error' } })
