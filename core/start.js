@@ -3,11 +3,11 @@ const Next = require('next')
 const serveStatic = require('serve-static')
 const fp = require('fastify-plugin')
 const path = require('path')
-const port = parseInt(process.env.PORT, 10) || 3000
+const port = parseInt(process.env.PORT, 10) || 3006
 const dev = process.env.NODE_ENV !== 'production'
 fastify.use('/public', serveStatic(path.resolve(__dirname, '..', 'public')))
 fastify.register((fastify, opts, next) => {
-	const app = Next({ dev })
+	const app = Next({ dev, dir: './client' })
 	app.prepare()
 		.then(_ => {
 			if (dev) {

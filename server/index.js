@@ -5,7 +5,7 @@ module.exports = async (fastify, options) => {
 	})
 
 	fastify.get('/test', async (res, req) => {
-		const client = await fastify.getKnex()
+		const client = await fastify.getKnex('sws')
 		const result = await client.select().from('user')
 		console.log(result)
 		return { code: 200, data: result }
