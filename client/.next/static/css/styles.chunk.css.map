@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/styles.chunk.css","sources":["webpack:///./pages/client/pages/_app.styl","webpack:///./pages/_app.styl"],"sourcesContent":[".page\n  width 100%",".page {\n  width: 100%;\n}\n"],"mappings":"AAAA;AACA;ACCA;;","sourceRoot":""}

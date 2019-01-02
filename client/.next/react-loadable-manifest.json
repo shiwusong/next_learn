@@ -1,0 +1,26 @@
+{
+  "./noop": [
+    {
+      "id": "../node_modules/next/dist/client/noop.js",
+      "name": "../node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ],
+  "./_app.styl": [
+    {
+      "id": "./pages/_app.styl",
+      "name": "./pages/_app.styl",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "undefined": [
+    {
+      "id": 2,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ]
+}
